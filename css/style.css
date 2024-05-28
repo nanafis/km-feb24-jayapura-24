@@ -46,22 +46,6 @@ main {
   padding: 2rem 0 3rem;
 }
 
-/* Artikel dan Asside dengan Ukuran yang Sama
-.regular {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  width: 22%;
-} */
-
-/* Artikel dengan Ukuran yang Lebih Besar
-.large {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 40px;
-  grid-column: span 2;
-  border-radius: 10px;
-  width: 50%; 
-} */
 
 /* Dashboard Start */
 .container {
@@ -104,6 +88,18 @@ main {
   border-radius: 10px;
 }
 
+.filter-page button {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: black;
+  border-radius: 8px;
+  border-width: 0;
+}
+.filter-page button:hover {
+  color: #7d34b1;
+}
+
+
 /* Atur ukuran dan tata letak kotak */
 .row {
   display: flex;
@@ -123,19 +119,7 @@ main {
   text-align: center;
   margin: 0 auto; /* Mengatur agar kotak menjadi tengah secara horizontal */
 }
-.table h2 {
-  text-align: center;
-}
-.table table {
-  border-collapse: collapse;
-}
 
-td,
-th {
-  border: 1px solid #000000;
-  text-align: left;
-  padding: 8px;
-}
 
 /* Atur gambar */
 .large img {
