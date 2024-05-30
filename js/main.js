@@ -9,6 +9,15 @@ const persen = 10/100;
     .then((response) => response.json())
     .then((data) => {
 
+        const filterTime = document.getElementById("filter-time").value;
+        
+        if(filterTime != ""){
+            const dataResult = data.filterTime(
+                (item) => item.cluster-time == filter
+            );
+            console.log (dataResult); data.filter((item ) => item.cluster-time == filterTime)
+        }
+
         // total qty
         const totalQty = data.reduce(
             (a, b) => a + b.quantity, 0);
@@ -16,7 +25,7 @@ const persen = 10/100;
         // Avarage
         const averageQty = totalQty/totalBulan;
                 
-
+ 
         // Stackholder
         const Stackholder = averageQty*persen;
         
@@ -30,3 +39,7 @@ const persen = 10/100;
         console.log(error);
     });
 }
+
+document.getElementById("btn-filter").addEventListener("click",function(){
+    loadJSON();
+})
