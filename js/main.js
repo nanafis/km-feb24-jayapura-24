@@ -10,13 +10,16 @@ const persen = 10/100;
     .then((data) => {
 
         const filterTime = document.getElementById("filter-time").value;
+        const filterBulan = document.getElementById("filter-bulan").value;
      
-    
-        
         let resultData = data;
-        if(filterTime != ""){
-            resultData = data.filter((item) => item.cluster_time == filterTime);
+
+        if(filterTime !="" && filterBulan !=""){
+            resultData = data.filter((item) => item.cluster_time == filterTime && item.bulan == filterBulan);
                   
+        }else if (filterTime == "" && filterBulan !=""){
+            resultData = data.filter((item) => item.bulan == filterBulan);
+
         }
 
         // total qty
