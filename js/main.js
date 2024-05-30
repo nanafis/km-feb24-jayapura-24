@@ -10,16 +10,17 @@ const persen = 10/100;
     .then((data) => {
 
         const filterTime = document.getElementById("filter-time").value;
+     
+    
         
+        let resultData = data;
         if(filterTime != ""){
-            const dataResult = data.filterTime(
-                (item) => item.cluster-time == filter
-            );
-            console.log (dataResult); data.filter((item ) => item.cluster-time == filterTime)
+            resultData = data.filter((item) => item.cluster_time == filterTime);
+                  
         }
 
         // total qty
-        const totalQty = data.reduce(
+        const totalQty = resultData.reduce(
             (a, b) => a + b.quantity, 0);
 
         // Avarage
