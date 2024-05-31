@@ -1,141 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tim 24 Jayapura | Pizza Place Sales</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
     <header>
         <!-- Navbar Start -->
         <nav class="navbar">
-          <a href="#" class="navbar-team">Jaya<span>Pura24</span></a>
-          <img src="assets/images/Logo Team.jpg" alt="">
+            <a href="#" class="navbar-team">Jaya<span>Pura24</span></a>
+            <img src="assets/images/Logo Team.jpg" alt="Logo">
         </nav>
         <!-- Navbar end -->
-      </header>
+    </header>
 
-      <main>
+    <main>
         <!-- Dashboard start -->
         <section class="container">
-         
-          <section class="breadcrumbs">
-            <div class="title-page">
-              <h2>Dashboard</h2>
-            </div>
-            <div class="filter-page">
-              <select id="filter-time">
-                  <option value="">Alltime</option>
-                  <option value="Pagi">Pagi</option>
-                  <option value="Siang">Siang</option>
-                  <option value="Sore">Sore</option>
-                  <option value="Malam">Malam</option>
-                </select>
-            </div>
-            <div class="filter-page">
-              <select id="filter-bulan">
-                <option value="">Allmonth</option>
-                <option value="Januari">Januari</option>
-                <option value="Februari">Februari</option>
-                <option value="Maret">Maret</option>
-                <option value="April">April</option>
-                <option value="Mei">Mei</option>
-                <option value="Juni">Juni</option>
-                <option value="Juli">Juli</option>
-                <option value="Agustus">Agustus</option>
-                <option value="September">September</option>
-                <option value="Oktober">Oktober</option>
-                <option value="November">November</option>
-                <option value="Desember">Desember</option>
-              </select>
-            </div>
-            <div class="filter-page">
-                <button id="btn-filter">Filter</button>
-            </div>
-          </section>
+            <section class="breadcrumbs">
+                <div class="title-page">
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="filter-page">
+                    <select id="filter-time">
+                        <option value="">Alltime</option>
+                        <option value="Pagi">Pagi</option>
+                        <option value="Siang">Siang</option>
+                        <option value="Sore">Sore</option>
+                        <option value="Malam">Malam</option>
+                    </select>
+                </div>
+                <div class="filter-page">
+                    <select id="filter-bulan">
+                        <option value="">Allmonth</option>
+                        <option value="Januari">Januari</option>
+                        <option value="Februari">Februari</option>
+                        <option value="Maret">Maret</option>
+                        <option value="April">April</option>
+                        <option value="Mei">Mei</option>
+                        <option value="Juni">Juni</option>
+                        <option value="Juli">Juli</option>
+                        <option value="Agustus">Agustus</option>
+                        <option value="September">September</option>
+                        <option value="Oktober">Oktober</option>
+                        <option value="November">November</option>
+                        <option value="Desember">Desember</option>
+                    </select>
+                </div>
+                <div class="filter-page">
+                    <button id="btn-filter">Filter</button>
+                </div>
+            </section>
 
-          <section class="row">
-              <div class="regular">
-                <h2>Quantity</h2>
-                <h3 id="total-qty">0</h3>
-              </div>
+            <section class="row">
+                <div class="regular">
+                    <h2>Quantity</h2>
+                    <h3 id="total-qty">0</h3>
+                </div>
+                <div class="regular">
+                    <h2>Average</h2>
+                    <h3 id="average-qty">0</h3>
+                </div>
+                <div class="regular">
+                    <h2>Stakeholder</h2>
+                    <h3 id="stackholder">0</h3>
+                </div>
+            </section>
 
-              <div class="regular">
-                <h2>Avarage</h2>
-                <h3 id="average-qty">0</h3>
-              </div>
-
-              <div class="regular">
-                <h2>Stackholder</h2>
-                <h3 id="stackholder">0</h3>
-              </div>
-
-          </section>
-
-          <section class="row">
-
-            <div class="large">
-              <h2>Total/Clsrprice</h2>
-              <!-- <img src="assets/images/totalprice.jpg" alt="Gambar 1"> -->
-              <canvas id="clusterPriceChart"></canvas>
-              
-            </div>
-          
-            <div class="large">
-              <h2>Total/Category</h2>
-              <img src="assets/images/totalcategory.jpg" alt="Gambar 2">
-              
-            </div>
-          
-            <div class="large">
-              <h2>Total/Size</h2>
-              <img src="assets/images/totalsize.jpg" alt="Gambar 2">
-              
-            </div>
-          
-            <div class="large">
-              <h2>Top10</h2>
-              <img src="assets/images/top10.jpg" alt="Gambar 4">
-            
-            </div>
-            <div class="large">
-              <h2>Low10</h2>
-              <img src="assets/images/low10.jpg" alt="Gambar 5">
-              
-            </div>
-            <div class="large">
-              <h2>Penjulan/Bulan</h2>
-              <img src="assets/images/penjualanperbulan.jpg" alt="Gambar 6">
-              
-            </div>
-
-           
-          
-          </section>
+            <section class="row">
+                <div class="large">
+                    <h2>Total/Cluster Price</h2>
+                    <canvas id="clusterChart"></canvas>
+                </div>
+                <div class="large">
+                    <h2>Total/Category</h2>
+                    <canvas id="totalcategory"></canvas>
+                </div>
+                <div class="large">
+                    <h2>Total/Size</h2>
+                    <canvas id="totalSizes"></canvas>
+                </div>
+                <div class="large">
+                    <h2>Top 10</h2>
+                    <canvas id="top10pizza"></canvas>
+                </div>
+                <div class="large">
+                    <h2>Low 10</h2>
+                    <canvas id="low10pizza"></canvas>
+                </div>
+                <div class="large">
+                    <h2>Penjualan/Bulan</h2>
+                    <canvas id="penjualanperbulan"></canvas>
+                </div>
+            </section>
+        </section>
         <!-- Dashboard end -->
-      </main>
-      
+    </main>
 
-      <!-- Footer Start -->
+    <!-- Footer Start -->
     <footer>
         <div class="credit">
-          <p>Created by <a href="">JayaPura24Team</a>. | &copy; 2024.</p>
-          <p><a href="team24.jayapura@gmail.com">team24.jayapura@gmail.com</a></p>
+            <p>Created by <a href="">JayaPura24Team</a>. | &copy; 2024.</p>
+            <p><a href="mailto:team24.jayapura@gmail.com">team24.jayapura@gmail.com</a></p>
         </div>
     </footer>
-    <!-- footer end -->
+    <!-- Footer end -->
 
     <!-- ChartJs start -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
     <!-- Script -->
-    <Script src="js/main.js"></Script>
-  
-    </body>
-  
-    
-  </body>
+    <script src="js/main.js"></script>
+</body>
 </html>
