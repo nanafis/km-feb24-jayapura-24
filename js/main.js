@@ -20,6 +20,9 @@ const persen = 10/100;
         }else if (filterTime == "" && filterBulan !=""){
             resultData = data.filter((item) => item.bulan == filterBulan);
 
+        }else if (filterTime !="" && filterBulan ==""){
+            resultData = data.filter((item) => item.cluster_time == filterTime);
+
         }
 
         // total qty
@@ -29,9 +32,11 @@ const persen = 10/100;
         // Avarage
         const averageQty = totalQty/totalBulan;
                 
- 
         // Stackholder
         const Stackholder = averageQty*persen;
+
+        // ClusterPriceChart
+        clusterPriceChart = (resultData);
         
 
         // Result Data
@@ -47,3 +52,28 @@ const persen = 10/100;
 document.getElementById("btn-filter").addEventListener("click",function(){
     loadJSON();
 })
+
+function clusterPriceChart(resultData) {
+
+    const ctx = document.getElementById('clusterPriceChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+}
