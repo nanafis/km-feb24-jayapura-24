@@ -1,3 +1,30 @@
+document.addEventListener("DOMContentLoaded",function(){
+    let labels = ["P1", "P2", "P3"];
+    let clusterPriceData = [0, 0, 0]
+
+  const ctx = document.getElementById('clusterPriceChart');
+  const chartPrice = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: labels,
+      datasets: [{
+        label: 'Quantity',
+        data: clusterPriceData,
+        borderWidth: 1,
+      },
+    ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+
+
+
 loadJSON();
 
 function loadJSON(){
@@ -36,7 +63,7 @@ const persen = 10/100;
         const Stackholder = averageQty*persen;
 
         // ClusterPriceChart
-        clusterPriceChart = (resultData);
+        clusterPriceChart(resultData);
         
 
         // Result Data
@@ -51,29 +78,20 @@ const persen = 10/100;
 
 document.getElementById("btn-filter").addEventListener("click",function(){
     loadJSON();
-})
+});
 
 function clusterPriceChart(resultData) {
 
-    const ctx = document.getElementById('clusterPriceChart');
+    let newData = [0, 0, 0];
 
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
+    labels.map((item, index) => {
+        const filterData = resultData
+        .filter((itemCluster) => itemCluster.cluster_price == item)
+        .reduce((acc, curr) => acc + curr.quantity, 0);
 
+        newData[index] = filterData;
+
+    })
+    chartPrice.data.datasets[0].data = newData;
+    chartPrice.update();
 }
